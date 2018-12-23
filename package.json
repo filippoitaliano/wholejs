@@ -3,20 +3,25 @@
   "version": "0.0.1",
   "main": "index.jsx",
   "scripts": {
-    "dev": "parcel index.html",
-    "build": "parcel build index.html"
+    "start": "serve ./build",
+    "dev": "parcel index.html --out-dir build",
+    "build": "parcel build index.html --out-dir build"
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "prop-types": "^15.6.2",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "serve": "^10.1.1",
+    "sweetalert2": "^7.32.4"
+  },
+  "devDependencies": {
     "eslint": "^5.10.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.11.1",
-    "parcel-plugin-eslint": "^1.0.4",
-    "prop-types": "^15.6.2",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
-    "sweetalert2": "^7.32.4"
+    "parcel-bundler": "^1.11.0",
+    "parcel-plugin-eslint": "^1.0.4"
   }
 }

@@ -1,0 +1,22 @@
+@keyframes animatedSquareVisibility {
+  0% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: white;
+  }
+  100% {
+    border-color: transparent;
+    transform: translateX(200px) rotate(360deg) ;
+  }
+}
+
+.animated-square {
+  border: 1px solid transparent;
+  width: 35px;
+  height: 35px;
+  background-color: transparent;
+  position: absolute;
+  animation-name: animatedSquareVisibility;
+  animation-duration: 5s;
+}

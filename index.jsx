@@ -1,7 +1,10 @@
+import autoBind from 'auto-bind';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
 import workInProgress from './resources/images/work-in-progress.png';
+
+import AnimatedSquare from './src/components/animated-square/AnimatedSquare';
 
 const styles = {
   page: {
@@ -36,18 +39,45 @@ const styles = {
   },
 };
 
-const App = () => (
-  <div style={styles.page}>
-    <div style={styles.logo}>
-      <img style={styles.img} src={workInProgress} alt="Work in progress logo" />
-    </div>
-    <div style={styles.info}>
-      Filippo Italiano •&nbsp;
-      <a style={styles.link} href="mailto:info@wholejs.com">
-        info@wholejs.com
-      </a>
-    </div>
-  </div>
-);
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    autoBind.react(this);
+    this.state = { instance: 3 };
+  }
+
+  componentDidMount() {
+    setInterval(this.updateInstance, 7000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.updateInstance);
+  }
+
+  updateInstance() {
+    this.setState({ instance: Math.floor(Math.random() * 10 + 1) });
+  }
+
+  render() {
+    const { instance } = this.state;
+
+    return (
+      <div key={instance} style={styles.page}>
+        <div style={styles.logo}>
+          <img style={styles.img} src={workInProgress} alt="Work in progress logo" />
+        </div>
+        <div style={styles.info}>
+          Filippo Italiano •&nbsp;
+          <a style={styles.link} href="mailto:info@wholejs.com">
+            info@wholejs.com
+          </a>
+        </div>
+        {[...Array(instance).keys()].map(() => (
+          <AnimatedSquare x={Math.random() * 500} y={Math.random() * 1000} />
+        ))}
+      </div>
+    );
+  }
+}
 
 ReactDOM.render(<App />, document.getElementById('app'));

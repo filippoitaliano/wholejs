@@ -10,6 +10,7 @@
     "heroku-postbuild": "npm run build"
   },
   "dependencies": {
+    "auto-bind": "^2.0.0",
     "axios": "^0.18.0",
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
@@ -24,6 +25,7 @@
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.11.1",
     "parcel-bundler": "^1.11.0",
-    "parcel-plugin-eslint": "^1.0.4"
+    "parcel-plugin-eslint": "^1.0.4",
+    "sass": "^1.15.2"
   }
 }

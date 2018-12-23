@@ -2,10 +2,12 @@
   "name": "wholejs",
   "version": "0.0.1",
   "main": "index.jsx",
+  "license": "MIT",
   "scripts": {
-    "start": "serve ./build",
+    "start": "serve -s build",
     "dev": "parcel index.html --out-dir build",
-    "build": "parcel build index.html --out-dir build"
+    "build": "parcel build index.html --out-dir build",
+    "heroku-postbuild": "npm run build"
   },
   "dependencies": {
     "axios": "^0.18.0",

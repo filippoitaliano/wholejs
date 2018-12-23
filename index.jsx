@@ -15,19 +15,22 @@ const styles = {
     left: 0,
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     alignItems: 'center',
     backgroundColor: '#313134',
+    overflow: 'hidden',
   },
   logo: {
-    width: 400,
-    maxWidth: '80%',
+    marginTop: 100,
+    width: 300,
+    maxWidth: '60%',
+    zIndex: 100,
   },
   img: {
     width: '100%',
   },
   info: {
-    marginTop: 25,
+    marginBottom: 100,
     textTransform: 'uppercase',
     fontFamily: 'Open Sans',
     fontWeight: 300,
@@ -73,7 +76,10 @@ class App extends React.Component {
           </a>
         </div>
         {[...Array(instance).keys()].map(() => (
-          <AnimatedSquare x={Math.random() * 500} y={Math.random() * 1000} />
+          <AnimatedSquare
+            x={Math.random() * window.innerHeight}
+            y={Math.random() * window.innerWidth}
+          />
         ))}
       </div>
     );

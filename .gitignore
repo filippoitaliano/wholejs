@@ -1,8 +1,2 @@
-.DS_Store
-.cache
-.env
-.idea
-.vscode
-build
 dist
 node_modules

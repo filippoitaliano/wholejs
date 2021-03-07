@@ -18,10 +18,7 @@ module.exports = function() {
         },
         {
           test: /\.png$/,
-          use: [
-            'url-loader',
-            'img-loader',
-          ],
+          type: 'asset/resource'
         },
       ],
     },
